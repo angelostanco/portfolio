@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://www.angelostanco.com/">
 <link rel="icon" href="jpg/fav_button.ico">
 <style>
-:root{--bg:#000;--text:#e6e6e6;--title:#c3c3c3;--meta:#8c8c8c;--link:#00adef;--panel:#0b0b0b;--line:#2a2a2a}
+:root{--bg:#000;--text:#e6e6e6;--title:#c3c3c3;--meta:#8c8c8c;--link:#00adef;--panel:#000;--line:#2a2a2a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:56px}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Arial,Helvetica,sans-serif}
@@ -22,7 +22,6 @@ a:focus-visible,button:focus-visible,.panel:focus-visible{outline:2px solid var(
 .nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;gap:22px;align-items:center;height:44px}
 .nav a{text-decoration:none;font-size:14px}
-.nav .dl{margin-left:auto}
 
 
 .video{margin-top:22px;position:relative;aspect-ratio:850/478;background:#111}
@@ -32,14 +31,16 @@ section{padding-top:40px}
 .bar{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
 .bar h2{margin:0;font-size:19px;font-weight:400;color:var(--title)}
 .bar span,.bar a{font-size:14px}
+.bar a img{height:20px;width:auto;vertical-align:middle}
+.bar a{display:flex;align-items:center}
 .hint{margin:0 0 8px;color:var(--meta);font-size:13px}
 
 /* ---- scroll boxes ---- */
 .box{position:relative}
 .box::after{content:"";position:absolute;left:1px;right:12px;bottom:1px;height:46px;pointer-events:none;
-  background:linear-gradient(to bottom,rgba(11,11,11,0),var(--panel));transition:opacity .2s}
+  background:linear-gradient(to bottom,rgba(0,0,0,0),var(--panel));transition:opacity .2s}
 .box.end::after{opacity:0}
-.panel{position:relative;height:300px;overflow-y:auto;background:var(--panel);border:1px solid var(--line);padding:14px 18px 40px;
+.panel{position:relative;height:300px;overflow-y:auto;background:none;border:0;font-size:13px;padding:4px 14px 40px 0;
   scrollbar-width:thin;scrollbar-color:#3a6f85 transparent}
 .panel.tall{height:500px}
 .panel::-webkit-scrollbar{width:10px}
@@ -49,7 +50,7 @@ section{padding-top:40px}
 
 .show{margin:0 0 14px;padding-left:10px;border-left:2px solid transparent}
 .show.active{border-left-color:var(--link)}
-.show h3,.job h3{margin:0;font-size:15px;font-weight:400;color:var(--title)}
+.show h3,.job h3{margin:0;font-size:13.5px;font-weight:400;color:var(--title)}
 .show.active h3{color:#fff}
 .show ul{margin:2px 0 0;padding-left:18px}
 .ts{background:none;border:0;padding:0;font:inherit;color:var(--link);cursor:pointer}
@@ -58,10 +59,10 @@ section{padding-top:40px}
 
 .job{margin:0 0 14px}
 .job p{margin:2px 0 0}
-.credits{color:var(--meta);font-size:14px}
-.panel h2{margin:20px 0 4px;font-size:16px;font-weight:400;color:var(--title)}
+.credits{color:var(--meta);font-size:12.5px}
+.panel h2{margin:20px 0 4px;font-size:14.5px;font-weight:400;color:var(--title)}
 .panel ul.plain{margin:0;padding-left:18px}
-footer{padding:36px 0 70px;color:var(--meta);font-size:13px}
+main.wrap{padding-bottom:70px}
 
 @media (max-width:640px){
   .nav .wrap{gap:14px}
@@ -78,7 +79,6 @@ footer{padding:36px 0 70px;color:var(--meta);font-size:13px}
     <a href="#player">Reel</a>
     <a href="#breakdown">Breakdown</a>
     <a href="#resume">Resume</a>
-    <a class="dl" href="pdf/AngeloStanco_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
   </div>
 </nav>
 
@@ -89,7 +89,7 @@ footer{padding:36px 0 70px;color:var(--meta);font-size:13px}
 </div>
 
 <section id="breakdown">
-  <div class="bar"><h2>Breakdown</h2><a href="pdf/AngeloStanco_Breakdown.pdf" target="_blank" rel="noopener">PDF</a></div>
+  <div class="bar"><h2>Breakdown</h2><a href="pdf/AngeloStanco_Breakdown.pdf" target="_blank" rel="noopener" aria-label="Open breakdown PDF"><img src="jpg/print.png" alt="" title="Breakdown PDF"></a></div>
   <p class="hint">Select a timestamp to jump the reel to that shot. The list follows the video as it plays.</p>
   <div class="box" id="box1"><div class="panel" id="bd" tabindex="0" aria-label="Reel breakdown">
 
@@ -180,10 +180,10 @@ footer{padding:36px 0 70px;color:var(--meta);font-size:13px}
 </section>
 
 <section id="resume">
-  <div class="bar"><h2>Resume</h2><a href="pdf/AngeloStanco_Resume.pdf" target="_blank" rel="noopener">PDF</a></div>
+  <div class="bar"><h2>Resume</h2><a href="pdf/AngeloStanco_Resume.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF"><img src="jpg/print.png" alt="" title="Resume PDF"></a></div>
   <div class="box" id="box2"><div class="panel tall" tabindex="0" aria-label="Resume">
 
-  <div style="color:var(--title);font-size:17px">Angelo Stanco</div>
+  <div style="color:var(--title);font-size:15px">Angelo Stanco</div>
   <div class="meta"><a href="mailto:angelostanco@gmail.com">angelostanco@gmail.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/angelostanco" target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp; Citizen of the United States, European Union and Canada</div>
 
   <h2>Work Experience</h2>
@@ -257,7 +257,6 @@ footer{padding:36px 0 70px;color:var(--meta);font-size:13px}
   </div></div>
 </section>
 
-<footer>&copy; Angelo Stanco</footer>
 </main>
 
 <script src="https://player.vimeo.com/api/player.js"></script>
